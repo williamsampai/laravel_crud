@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="border-gray-700 fixed w-full top-0 z-50" style="background-color: #A67B5B;">
+<nav x-data="{ open: false }" class="border-gray-700 fixed w-full top-0 z-50" style="background-color: #7e4700;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">

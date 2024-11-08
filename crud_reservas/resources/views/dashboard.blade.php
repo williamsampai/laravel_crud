@@ -8,7 +8,9 @@
     <title>Document</title>
     <style>
         #banner{
-
+            padding-top: 62px;
+            height:100vh;
+            width:100%;
         }
 
     </style>
@@ -17,6 +19,6 @@
     @section('content')
         @include('layouts.navigation')
 
-        <img id="banner"   src="{{asset('images/reserva.png')}}" alt="" style="padding-top: 62px; height:100vh; width:100%">
+        <img id="banner"   src="{{asset('images/reserva.png')}}" alt="">
 </body>
 </html>
