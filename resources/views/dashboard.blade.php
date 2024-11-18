@@ -70,6 +70,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       height: auto; 
+      margin-top: 62px;
     }
     .card-header {
       color: #000;
@@ -84,7 +85,15 @@
     .form-control {
       height: calc(1.5em + 0.75rem + 2px); 
     }
-    
+    .foo2 {
+    height: 50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #7e4700;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
 
     </style>
 </head>
@@ -102,40 +111,39 @@
         </div>
 
         <div class="container mt-5 d-flex justify-content-center" id="agendamentos">
-            <div class="card" style="width: 500px;">
-                <div class="card-header text-center py-3">
-                 <h1 class="card-title mb-0">Agendamento de Mesas</h1>
-            </div>
-            <div class="card-body">
-                <form action="./verify/cadastrarCliente.php" method="post">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">Numero da mesa</label>
-                        <input type="text" class="form-control" id="numeroMesa" name="numero_da_mesa" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Nome</label>
-                        <input type="email" class="form-control" id="nome" name="nome_do_cliente" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefone" class="form-label">Cadeiras</label>
-                        <input type="tel" class="form-control" id="cadeiras" name="quantidade_de_lugares_reservados" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="data" class="form-label">Data</label>
-                        <input type="date" class="form-control" id="data"  name="data_reserva" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="hora" class="form-label">Hora</label>
-                        <input type="time" class="form-control" id="hora" name="hora" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100" name="submit">Agendar</button>
-                </form>
-            </div>
+    <div class="card" style="width: 500px; background-color: #F4F1E1; border-radius: 10px;">
+        <div class="card-header text-center py-3" style="background-color:  #A64F03; color:white; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+            <h1 class="card-title mb-0">Agendamento de Mesas</h1>
         </div>
-  
-
-  
-</body>
-</html>
-
+        <div class="card-body">
+            <form action="./verify/cadastrarCliente.php" method="post">
+                <div class="mb-3">
+                    <label for="numeroMesa" class="form-label" style="color: #2C3E50;">Número da Mesa</label>
+                    <input type="text" class="form-control" id="numeroMesa" name="numero_da_mesa" required style="border-color: #8E735B;" bg-collor:yellow;>
+                </div>
+                <div class="mb-3">
+                    <label for="nome" class="form-label" style="color: #2C3E50;">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome_do_cliente" required style="border-color: #8E735B;">
+                </div>
+                <div class="mb-3">
+                    <label for="cadeiras" class="form-label" style="color: #2C3E50;">Cadeiras</label>
+                    <input type="tel" class="form-control" id="cadeiras" name="quantidade_de_lugares_reservados" required style="border-color: #8E735B;">
+                </div>
+                <div class="mb-3">
+                    <label for="data" class="form-label" style="color: #2C3E50;">Data</label>
+                    <input type="date" class="form-control" id="data" name="data_reserva" required style="border-color: #8E735B;">
+                </div>
+                <div class="mb-3">
+                    <label for="hora" class="form-label" style="color: #2C3E50;">Hora</label>
+                    <input type="time" class="form-control" id="hora" name="hora" required style="border-color: #8E735B;">
+                </div>
+                <button type="submit" class="btn btn-primary w-100" name="submit" style="background-color: #A64F03; border: none; border-radius: 5px;">Agendar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="foo2">
+            <p>&copy;2024. Todos os direitos reservados.</p>
+        </footer>
+        
 </x-app-layout>

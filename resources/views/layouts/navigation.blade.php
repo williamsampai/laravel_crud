@@ -15,6 +15,7 @@
                     <a href="#sobre" class="text-white no-underline hover:text-gray-300">Sobre</a>
                     <a href="#servicos" class="text-white no-underline hover:text-gray-300">Serviços</a>
                     <a href="#agendamentos" class="text-white no-underline hover:text-gray-300">Agendamentos</a>
+                    <a href="#feedbacks" class="text-white no-underline hover:text-gray-300">Feedbacks</a>
                 </div>
             </div>
 
