@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservasController;
+use App\Http\Controllers\feedbackController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,10 @@ Route::get('/reservas/{Feedback}', [ReservasController::class, 'show'])->name('f
 Route::get('/feedback/{Feedback}/edit', [ReservasController::class, 'edit'])->name('feedback.edit');
 Route::put('/feedback/{Feedback}', [ReservasController::class, 'update'])->name('feedback.update'); 
 Route::delete('/feedback/{Feedback}', [ReservasController::class, 'destroy'])->name('feedback.destroy'); 
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+Route::get('/feedback/create', [FeedbackController::class, 'create'])->name('feedback.create');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::get('/feedback/{Feedback}', [FeedbackController::class, 'show'])->name('feedback.show');
+Route::get('/feedback/{Feedback}/edit', [FeedbackController::class, 'edit'])->name('feedback.edit');
+Route::put('/feedback/{Feedback}', [FeedbackController::class, 'update'])->name('feedback.update');
+Route::delete('/feedback/{Feedback}', [FeedbackController::class, 'destroy'])->name('feedback.destroy');
