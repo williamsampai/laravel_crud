@@ -70,10 +70,7 @@
       border: none;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      height: 40px; 
-      margin-top: 257px;
-      padding-top: 20px;
-    }
+      height: 40px;   padding-top:60px   }
     .card-header {
       color: #000;
       border-bottom: none;
@@ -138,7 +135,9 @@ input:focus, select:focus, textarea:focus {
     border-color: #5b3e26;
     box-shadow: 0 0 0 0.2rem rgba(111, 79, 55, 0.25);
 }
-
+#feedbacks{
+        padding-top: 250px;
+    }
 
     </style>
 </head>
@@ -166,20 +165,22 @@ input:focus, select:focus, textarea:focus {
                 </p>
         </div>
 </div>
-        <div class="container mt-5 d-flex justify-content-center" id="agendamentos" style="margin-top: 65px;">
+        <div class="container mt-5 d-flex justify-content-center" id="agendamentos">
     <div class="card" style="width: 500px; background-color: #F4F1E1; border-radius: 10px;">
         <div class="card-header text-center py-3" style="background-color:  #A64F03; color:white; border-top-left-radius: 10px; border-top-right-radius: 10px;">
             <h1 class="card-title mb-0">Agendamento de Mesas</h1>
         </div>
         <div class="card-body">
-            <form action="./verify/cadastrarCliente.php" method="post">
-                <div class="mb-3">
-                    <label for="numeroMesa" class="form-label" style="color: #2C3E50;">Número da Mesa</label>
-                    <input type="text" class="form-control" id="numeroMesa" name="numero_da_mesa" required style="border-color: #8E735B;" bg-collor:yellow;>
-                </div>
+            <form action="{{ route('reservas.store')}}" method="post">
+            @csrf
+                
                 <div class="mb-3">
                     <label for="nome" class="form-label" style="color: #2C3E50;">Nome</label>
                     <input type="text" class="form-control" id="nome" name="nome_do_cliente" required style="border-color: #8E735B;">
+                </div>
+                <div class="mb-3">
+                    <label for="numeroMesa" class="form-label" style="color: #2C3E50;">Número da Mesa</label>
+                    <input type="text" class="form-control" id="numeroMesa" name="numero_da_mesa" required style="border-color: #8E735B;" bg-collor:yellow;>
                 </div>
                 <div class="mb-3">
                     <label for="cadeiras" class="form-label" style="color: #2C3E50;">Cadeiras</label>

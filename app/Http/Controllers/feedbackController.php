@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feedback;
 use Illuminate\Http\Request;
-class feedbackController extends Controller
+class FeedbackController extends Controller
 {
     public readonly feedbackController $feedback;
 
@@ -37,7 +37,7 @@ class feedbackController extends Controller
                 'email' => 'required|email|max:255',
                 'retorno' => 'required|string|max:500',
             ]);  
-            feedbackController::create($validatedData);
+            FeedbackController::create($validatedData);
             return redirect()->back()->with('success', 'Comentário enviado com sucesso!');
             if ($created) {
                 $feedback = Feedback::all(); 

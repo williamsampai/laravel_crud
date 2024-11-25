@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Reserva;
+
 class ReservasController extends Controller
 {
     /**
@@ -26,9 +28,21 @@ class ReservasController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-    }
+{
+
+    $validatedData = $request->validate([
+        'nome' => 'required|string|max:40', 
+        'numero_mesa' => 'required|integer',
+        'cadeiras' => 'required|integer', 
+        'data' => 'required|date', 
+        'hora' => 'required|date_format:H:i',
+    ]);
+
+    ReservasController::create($validatedData);
+
+
+    return redirect()->back()->with('success', 'Reserva feita com sucesso!');
+}
 
     /**
      * Display the specified resource.

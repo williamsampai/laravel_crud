@@ -10,6 +10,6 @@ class Feedback extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome', 'email', 'senha', 'retorno'
+        'nome', 'numero_mesa', 'cadeiras', 'data', 'hora',
     ];
 }
