@@ -2,77 +2,66 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateSupport;
+
 use Illuminate\Http\Request;
 
-use App\Models\Reserva;
+use App\Models\Reservas;
+
 
 class ReservasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+  
+
+    public readonly Reservas $reservas;
+    public function __construct(){
+       $this->reservas = new Reservas(); 
+    }
+
     public function index()
     {
-        //
+        $reservas= Reservas::all();
+        return view('dashboard', compact('reservas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('reservas.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-{
 
-    $validatedData = $request->validate([
-        'nome' => 'required|string|max:40', 
-        'numero_mesa' => 'required|integer',
-        'cadeiras' => 'required|integer', 
-        'data' => 'required|date', 
-        'hora' => 'required|date_format:H:i',
+    public function store(StoreUpdateSupport $request)
+    {
+    $created = $this ->reservas->create([
+        'nome' => $request->input('nome'),
+        'numero_mesa' => $request->input('numero_mesa'),
+        'cadeiras' => $request->input('cadeiras'),
+        'data' => $request->input('data'),
+        'hora' => $request->input('hora'),
     ]);
-
-    ReservasController::create($validatedData);
-
-
     return redirect()->back()->with('success', 'Reserva feita com sucesso!');
-}
+    }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $reservas= Reservas::findOrFail($id);
+        $reservas->delete();
+
+        return redirect()->route('dashboard')->with('success', 'Reserva excluída com sucesso!');
     }
 }

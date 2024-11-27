@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateSupport;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
 class FeedbackController extends Controller
@@ -28,7 +29,7 @@ class FeedbackController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateSupport $request)
     {
       
             $validatedData = $request->validate([

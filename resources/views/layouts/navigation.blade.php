@@ -16,6 +16,7 @@
                     <a href="#servicos" class="text-white no-underline hover:text-gray-300">Serviços</a>
                     <a href="#agendamentos" class="text-white no-underline hover:text-gray-300">Agendamentos</a>
                     <a href="#feedbacks" class="text-white no-underline hover:text-gray-300">Feedbacks</a>
+                    <a href="#listagem" class="text-white no-underline hover:text-gray-300">Listagem</a>
                 </div>
             </div>
 
@@ -78,8 +79,8 @@
             <a href="#servicos" class="block px-4 py-2 text-white hover:bg-gray-700 no-underline">Serviços</a>
             <a href="#horarios" class="block px-4 py-2 text-white hover:bg-gray-700 no-underline">Horários</a>
             <a href="#agendamentos" class="block px-4 py-2 text-white hover:bg-gray-700 no-underline">Agendamentos</a>
+            <a href="#listagem" class="block px-4 py-2 text-white hover:bg-gray-700 no-underline">listagem</a>
         </div>
-
 
         <!-- Informações do Usuário no Mobile -->
         @if (Auth::check())
